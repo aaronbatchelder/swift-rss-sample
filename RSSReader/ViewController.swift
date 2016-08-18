@@ -46,12 +46,12 @@ class ViewController: UITableViewController, MWFeedParserDelegate {
     
     
     func feedParser(parser: MWFeedParser, didParseFeedInfo info: MWFeedInfo) {
-        println(info)
+        print(info)
         self.title = info.title
     }
     
     func feedParser(parser: MWFeedParser, didParseFeedItem item: MWFeedItem) {
-        println(item)
+        print(item)
         self.items.append(item)
     }
 
@@ -90,7 +90,7 @@ class ViewController: UITableViewController, MWFeedParserDelegate {
         let projectURL = item.link.componentsSeparatedByString("?")[0]
         let imgURL: NSURL? = NSURL(string: projectURL + "/cover_image?style=200x200#")
         cell.imageView?.contentMode = UIViewContentMode.ScaleAspectFit
-        cell.imageView?.setImageWithURL(imgURL, placeholderImage: UIImage(named: "logo.png"))
+        cell.imageView?.setImageWithURL(imgURL!, placeholderImage: UIImage(named: "logo.png"))
     }
 
 }
